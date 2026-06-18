@@ -1,5 +1,7 @@
 # NAC Wave 4 Infotainment Updater
 
+> **This fork adds Linux support.** The upstream project shipped only macOS and Windows scripts. This fork ports them to Linux — a native pair of shell scripts (`linux/prepare_nac_update_linux.sh` and `linux/prepare_nac_map_update_linux.sh`) that use standard Linux tools (`lsblk`, `parted`, `mkfs.vfat`, `mount`) instead of macOS's `diskutil`, so you can prepare the update USB on any Linux distribution. See **[Linux instructions →](linux/README.md)**.
+
 Scripts to prepare a USB drive for updating the Continental NAC Wave 4 infotainment system found in Peugeot, Citroën, DS, and Opel/Vauxhall vehicles (~2017 onwards).
 
 ---
@@ -29,11 +31,13 @@ Updating car infotainment systems always carries some risk. Do not turn off the 
 | Platform | Scripts | Status |
 |---|---|---|
 | [macOS](macos/README.md) | `prepare_nac_update_mac.sh`, `prepare_nac_map_update_mac.sh` | Tested |
+| [Linux](linux/README.md) | `prepare_nac_update_linux.sh`, `prepare_nac_map_update_linux.sh` | Untested |
 | [Windows](windows/README.md) | `Prepare-NacFirmwareUpdate.ps1`, `Prepare-NacMapUpdate.ps1` | Untested |
 
 See the platform-specific README for prerequisites, usage, and troubleshooting:
 
 - **[macOS instructions →](macos/README.md)**
+- **[Linux instructions →](linux/README.md)**
 - **[Windows instructions →](windows/README.md)**
 
 ---
@@ -62,6 +66,14 @@ To confirm you have a NAC Wave 4: Settings → System info → System version. F
 brew install coreutils gnu-tar
 bash macos/prepare_nac_update_mac.sh       # firmware (~5.9 GB)
 bash macos/prepare_nac_map_update_mac.sh   # maps (~19 GB, optional)
+```
+
+### Linux
+
+```bash
+sudo apt install curl tar dosfstools parted util-linux   # or dnf / pacman / zypper
+bash linux/prepare_nac_update_linux.sh       # firmware (~5.9 GB)
+bash linux/prepare_nac_map_update_linux.sh   # maps (~19 GB, optional)
 ```
 
 ### Windows (PowerShell, run as Administrator)
