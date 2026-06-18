@@ -31,7 +31,7 @@ Updating car infotainment systems always carries some risk. Do not turn off the 
 | Platform | Scripts | Status |
 |---|---|---|
 | [macOS](macos/README.md) | `prepare_nac_update_mac.sh`, `prepare_nac_map_update_mac.sh` | Tested |
-| [Linux](linux/README.md) | `prepare_nac_update_linux.sh`, `prepare_nac_map_update_linux.sh` | Untested |
+| [Linux](linux/README.md) | `prepare_nac_update_linux.sh`, `prepare_nac_map_update_linux.sh` | Tested |
 | [Windows](windows/README.md) | `Prepare-NacFirmwareUpdate.ps1`, `Prepare-NacMapUpdate.ps1` | Untested |
 
 See the platform-specific README for prerequisites, usage, and troubleshooting:
